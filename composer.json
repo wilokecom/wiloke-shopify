@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "WilokeShopify\\": "src/"
+    }
+  },
+  "require": {
+    "phpclassic/php-shopify": "^1.1"
+  }
+}
