@@ -74,5 +74,21 @@ $userId = RegistryFactory::register('shopify', [
 
 * Property $aInfo: Là một mảng, bắt buộc phải có username  và email \['username' =&gt; 'wiloke', 'email' =&gt; 'x@gmail.com'\] 
 
+###  Shopify
+
+Mỗi user được add 1 shopify duy nhất. 
+
+Shopify được lưu vào user meta
+
+```php
+class UserMeta
+{
+    public static function updateShopName($userId, $shopName)
+    {
+        update_user_meta($userId, Name::autoAddPrefix('shop_name'), $shopName);
+    }
+}
+```
+
  
 
