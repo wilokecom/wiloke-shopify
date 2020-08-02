@@ -10,6 +10,7 @@ class Shopify
     private static $self;
     public $error;
     public $retrieve;
+    private $accessToken;
     private $shopName;
     public $shopSubfix = '.myshopify.com';
     
@@ -82,9 +83,14 @@ class Shopify
     public function getAccessToken()
     {
         try {
-            $this->retrieve = \PHPShopify\AuthHelper::getAccessToken();
+            $this->accessToken = \PHPShopify\AuthHelper::getAccessToken();
+            if (!empty($this->accessToken)) {
+                return $this->accessToken;
+            }
             
-            return !empty($this->retrieve);
+            $this->retrieve = "Empty access token";
+            
+            return false;
         } catch (\PHPShopify\Exception\SdkException $e) {
             $this->retrieve = $e->getMessage();
             

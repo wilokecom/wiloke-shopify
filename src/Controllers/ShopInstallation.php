@@ -2,18 +2,14 @@
 
 namespace WilokeShopify\Controllers;
 
+use WilokeShopify\Illuminate\Request\Request;
 use WilokeShopify\ShopifyConnection\Shopify;
 
 class ShopInstallation
 {
-    public function __construct($shopName)
+    public function installShop(Request $oRequest)
     {
-        $this->installShop($shopName);
-    }
-    
-    public function installShop($shopName)
-    {
-        $status = Shopify::makeConnect($shopName)->createAuthRequest();
+        $status = Shopify::makeConnect($oRequest->getParam('shopname'))->createAuthRequest();
         if (!$status) {
             echo Shopify::retrieve();
             die;

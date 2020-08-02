@@ -8,7 +8,7 @@ class UserMeta
 {
     public static function updateShopName($userId, $shopName)
     {
-        update_user_meta($userId, Name::autoAddPrefix('shop_name'), $shopName);
+        update_user_meta($userId, Name::autoAddPrefix('shop_name'), Name::removeShopifySubDomain($shopName));
     }
     
     public static function updateShopAccessToken($userId, $accessToken)
@@ -34,7 +34,7 @@ class UserMeta
             sprintf(
                 "SELECT user_id FROM $wpdb->usermeta WHERE meta_key='%s' AND meta_value='%s'",
                 Name::autoAddPrefix('shop_name'),
-                $wpdb->_real_escape($shopName)
+                $wpdb->_real_escape(Name::removeShopifySubDomain($shopName))
             )
         );
     }

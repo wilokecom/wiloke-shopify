@@ -1,6 +1,6 @@
 <?php
 
-namespace WilokeShopify\Controllers\Response;
+namespace WilokeShopify\Illuminate\Retrieve;
 
 class RestRetrieve extends AbstractRetrieve implements InterfaceRetrieve
 {

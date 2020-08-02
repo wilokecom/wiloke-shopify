@@ -170,9 +170,13 @@ class AuthHelper
 
             $response = HttpRequestJson::post($config['AdminUrl'] . 'oauth/access_token', $data);
 
-            return isset($response['access_token']) ? $response['access_token'] : null;
+            if (isset($response['access_token'])) {
+                return $response['access_token'];
+            }
+    
+            throw new SdkException('The link has been expired');
         } else {
-            throw new SdkException("This request is not initiated from a valid shopify shop!");
+            throw new SdkException('This request is not initiated from a valid shopify shop!');
         }
     }
 }

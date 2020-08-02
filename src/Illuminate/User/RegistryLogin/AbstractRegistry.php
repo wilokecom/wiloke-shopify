@@ -1,6 +1,6 @@
 <?php
 
-namespace WilokeShopify\Controllers\RegistryLogin;
+namespace WilokeShopify\Illuminate\User\RegistryLogin;
 
 class AbstractRegistry
 {

@@ -10,4 +10,9 @@ class Name
         
         return strpos($name, $prefix) === 0 ? $name : $prefix.$name;
     }
+    
+    public static function removeShopifySubDomain($shopName)
+    {
+        return str_replace(WILOKE_SHOPIFY_SUBDOMAIN, '', $shopName);
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace WilokeShopify\Controllers\Response;
+namespace WilokeShopify\Illuminate\Retrieve;
 
 interface InterfaceRetrieve
 {

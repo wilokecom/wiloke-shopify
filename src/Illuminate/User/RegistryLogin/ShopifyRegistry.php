@@ -1,10 +1,10 @@
 <?php
 
-namespace WilokeShopify\Controllers\RegistryLogin;
+namespace WilokeShopify\Illuminate\User\RegistryLogin;
 
 use WilokeShopify\Models\UserMeta;
 
-class ShopifyRegistry extends AbstractRegistry implements InterfaceRegister
+class ShopifyRegistry extends AbstractRegistry implements InterfaceRegistry
 {
     private static $self;
     

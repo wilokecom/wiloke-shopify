@@ -1,8 +1,8 @@
 <?php
 
-namespace WilokeShopify\Controllers\RegistryLogin;
+namespace WilokeShopify\Illuminate\User\RegistryLogin;
 
-interface InterfaceRegister
+interface InterfaceRegistry
 {
     /**
      * @param $aInfo ['username' => '', 'password' => '', 'email' => '']
